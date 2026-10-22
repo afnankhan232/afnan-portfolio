@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Afnan Khan | Systems Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Afnan Khan – Systems Engineer specializing in automation platforms, Django systems, SAP workflows and intelligent architectures.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-mode">
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<header class="navbar">
+  <a class="logo logo-link" href="admin-gate.html" aria-label="Open the admin sign-in gate">Afnan Khan</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="work-in-progress.html" aria-label="Work in Progress" title="Work in Progress">WIP</a>
+  </nav>
+  <div class="appearance-controls">
+    <details class="appearance-menu">
+      <summary class="appearance-trigger" aria-label="Appearance settings" title="Appearance settings"><span aria-hidden="true">◐</span></summary>
+      <div class="appearance-panel">
+        <p class="appearance-title">Appearance</p>
+        <p class="appearance-caption">Accent palette</p>
+        <div class="appearance-palettes" role="group" aria-label="Accent palette">
+          <button type="button" data-color-theme="ember" aria-label="Ember palette" aria-pressed="true"><span class="palette-swatch swatch-ember"></span></button>
+          <button type="button" data-color-theme="ocean" aria-label="Ocean palette" aria-pressed="false"><span class="palette-swatch swatch-ocean"></span></button>
+          <button type="button" data-color-theme="forest" aria-label="Forest palette" aria-pressed="false"><span class="palette-swatch swatch-forest"></span></button>
+        </div>
+        <label class="glass-setting" for="glassMode"><span>Glass surfaces</span><input id="glassMode" type="checkbox"><span class="glass-switch" aria-hidden="true"></span></label>
+      </div>
+    </details>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme"></button>
+  </div>
+</header>
+
+<section class="hero reveal">
+  <div class="hero-left">
+    <p class="intro">Hi, I'm Afnan Khan</p>
+
+    <h1 class="hero-title">
+      <span class="hero-heading-line">Engineering Intelligent</span>
+      <span class="hero-heading-line">Automation Systems</span>
+      <span class="gradient-text hero-heading-line">That Deliver Real Impact.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Full-stack systems engineer focused on backend architecture,
+      enterprise workflows and scalable automation platforms.
+    </p>
+
+    <div class="hero-cta">
+      <a href="projects.html" class="btn primary magnetic">Explore Projects</a>
+      <a href="resume.html" class="btn secondary magnetic">View Resume</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="globe-caption" aria-live="polite">
+      <span class="globe-status-dot" aria-hidden="true"></span>
+      <span class="globe-data-label">YOUR PUBLIC IP</span>
+      <span class="globe-data-value" id="visitorIp">Looking up...</span>
+    </div>
+    <canvas id="threeCanvas"></canvas>
+    <div class="globe-footnote" aria-live="polite">
+      <span class="globe-location" id="visitorLocation">Resolving approximate location...</span>
+      <time class="globe-time" id="visitorTime"></time>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTER SECTION -->
+<section class="stats-section reveal">
+  <div class="stat-card">
+    <h2 class="counter" data-target="80">0</h2>
+    <p>Hiring Time Reduced (%)</p>
+  </div>
+
+  <div class="stat-card">
+    <h2 class="counter" data-target="5">0</h2>
+    <p>Production Systems</p>
+  </div>
+
+  <div class="stat-card">
+    <h2 class="counter" data-target="3">0</h2>
+    <p>Enterprise Workflows</p>
+  </div>
+
+  <div class="stat-card">
+    <h2 class="counter" data-target="100">0</h2>
+    <p>Architecture Focus (%)</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Afnan Khan · Engineered With Precision
+</footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module" src="script.js"></script>
+<script src="theme.js?v=20261022"></script>
+<script src="ui.js?v=20261022"></script>
+<script src="particles.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Work in Progress | Afnan Khan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Afnan Khan's interactive project progress tracker.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<header class="navbar" id="navbar">
+  <div class="logo">AK /</div>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="experience.html">Experience</a>
+    <a href="work-in-progress.html" class="active" aria-label="Work in Progress" title="Work in Progress">WIP</a>
+  </nav>
+  <div class="appearance-controls">
+    <details class="appearance-menu">
+      <summary class="appearance-trigger" aria-label="Appearance settings" title="Appearance settings"><span aria-hidden="true">◐</span></summary>
+      <div class="appearance-panel">
+        <p class="appearance-title">Appearance</p>
+        <p class="appearance-caption">Accent palette</p>
+        <div class="appearance-palettes" role="group" aria-label="Accent palette">
+          <button type="button" data-color-theme="ember" aria-label="Ember palette" aria-pressed="true"><span class="palette-swatch swatch-ember"></span></button>
+          <button type="button" data-color-theme="ocean" aria-label="Ocean palette" aria-pressed="false"><span class="palette-swatch swatch-ocean"></span></button>
+          <button type="button" data-color-theme="forest" aria-label="Forest palette" aria-pressed="false"><span class="palette-swatch swatch-forest"></span></button>
+        </div>
+        <label class="glass-setting" for="glassMode"><span>Glass surfaces</span><input id="glassMode" type="checkbox"><span class="glass-switch" aria-hidden="true"></span></label>
+      </div>
+    </details>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme"></button>
+  </div>
+</header>
+
+<main class="work-progress-page">
+  <section class="wip-hero">
+    <p class="section-label">BUILD TRACKER / 2026</p>
+    <h1>Work in <span class="grad-text">Progress.</span></h1>
+    <p class="wip-intro">Good systems are built one deliberate step at a time. Move through the milestones to explore the build lifecycle.</p>
+  </section>
+
+  <section class="wip-board" aria-labelledby="wip-board-title">
+    <div class="wip-board-heading">
+      <div>
+        <p class="section-label">PROJECT PIPELINE</p>
+        <h2 id="wip-board-title">From first sketch to <span class="grad-text">shipped.</span></h2>
+      </div>
+      <output id="wipProjectCount" class="wip-project-count" aria-live="polite">6 projects</output>
+    </div>
+
+    <div class="wip-filterbar" role="group" aria-label="Filter projects by status">
+      <button class="wip-filter is-active" type="button" data-status-filter="all" aria-pressed="true">All projects</button>
+      <button class="wip-filter" type="button" data-status-filter="progress" aria-pressed="false">In progress</button>
+      <button class="wip-filter" type="button" data-status-filter="shipped" aria-pressed="false">Shipped</button>
+    </div>
+
+    <div class="wip-carousel-layout">
+      <div class="wip-carousel" aria-label="Project carousel">
+        <button class="wip-arrow wip-arrow-previous" type="button" data-carousel-direction="-1" aria-label="Previous project" title="Previous project">↑</button>
+        <div class="wip-carousel-track" id="wipCarouselTrack" tabindex="0" role="group" aria-label="Use arrow keys to browse projects">
+          <article class="wip-project-card" data-status="progress" data-stage="Development" data-tags="Hiring automation|AI/ML|FastAPI">
+            <div class="wip-card-top"><span class="wip-card-index">01 / 06</span><span class="wip-card-status">In progress</span></div>
+            <div class="wip-card-icon" aria-hidden="true">🐝</div>
+            <h3>Hive Hiring Platform</h3>
+            <p>Recruiting workflows, candidate scoring, and resume parsing.</p>
+          </article>
+          <article class="wip-project-card" data-status="shipped" data-stage="Shipped" data-tags="Django|REST API|CRM">
+            <div class="wip-card-top"><span class="wip-card-index">02 / 06</span><span class="wip-card-status">Shipped</span></div>
+            <div class="wip-card-icon" aria-hidden="true">▦</div>
+            <h3>CTRL CRM System</h3>
+            <p>Workflow triggers, analytics, and role-based access in production.</p>
+          </article>
+          <article class="wip-project-card" data-status="progress" data-stage="Testing" data-tags="Python|LSTM|FastAPI">
+            <div class="wip-card-top"><span class="wip-card-index">03 / 06</span><span class="wip-card-status">In progress</span></div>
+            <div class="wip-card-icon" aria-hidden="true">↗</div>
+            <h3>Stock Prediction ML</h3>
+            <p>Forecasting pipeline with a real-time inference endpoint.</p>
+          </article>
+          <article class="wip-project-card" data-status="progress" data-stage="Development" data-tags="SAP|Python|Automation">
+            <div class="wip-card-top"><span class="wip-card-index">04 / 06</span><span class="wip-card-status">In progress</span></div>
+            <div class="wip-card-icon" aria-hidden="true">⌘</div>
+            <h3>SAP Workflow Automation</h3>
+            <p>Procurement, invoice processing, and approvals automation.</p>
+          </article>
+          <article class="wip-project-card" data-status="progress" data-stage="Design" data-tags="NLP|Transformers|FastAPI">
+            <div class="wip-card-top"><span class="wip-card-index">05 / 06</span><span class="wip-card-status">In progress</span></div>
+            <div class="wip-card-icon" aria-hidden="true">◇</div>
+            <h3>AI Document Processor</h3>
+            <p>Structured extraction for contracts and invoices.</p>
+          </article>
+          <article class="wip-project-card" data-status="shipped" data-stage="Shipped" data-tags="Django|PostgreSQL|React">
+            <div class="wip-card-top"><span class="wip-card-index">06 / 06</span><span class="wip-card-status">Shipped</span></div>
+            <div class="wip-card-icon" aria-hidden="true">✚</div>
+            <h3>Bewell Medical Platform</h3>
+            <p>Patient scheduling, staff management, and notifications.</p>
+          </article>
+        </div>
+        <button class="wip-arrow wip-arrow-next" type="button" data-carousel-direction="1" aria-label="Next project" title="Next project">↓</button>
+      </div>
+
+      <aside class="wip-project-detail" id="wipProjectDetail" aria-live="polite">
+        <p class="section-label" id="wipProjectStage">DEVELOPMENT</p>
+        <h2 id="wipProjectName">Hive Hiring Platform</h2>
+        <p id="wipProjectDescription">Recruiting workflows, candidate scoring, and resume parsing.</p>
+        <div class="wip-project-tags" id="wipProjectTags" aria-label="Project technologies"></div>
+        <div class="wip-carousel-dots" id="wipCarouselDots" role="group" aria-label="Choose a project"></div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="footer-logo">Afnan Khan</span>
+  <span>© 2026 · Engineered with Precision</span>
+  <span>UP, India</span>
+</footer>
+
+<script src="theme.js?v=20261022"></script>
+<script src="ui.js" defer></script>
+<script src="particles.js" defer></script>
+<script src="work-in-progress.js" defer></script>
+</body>
+</html>

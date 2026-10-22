@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin sign-in challenge">
+  <title>Quick Check | Afnan Khan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode admin-page">
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+<header class="navbar admin-navbar" id="navbar">
+  <a class="logo logo-link" href="index.html">Afnan Khan</a>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+  <div class="appearance-controls">
+    <details class="appearance-menu">
+      <summary class="appearance-trigger" aria-label="Appearance settings" title="Appearance settings"><span aria-hidden="true">◐</span></summary>
+      <div class="appearance-panel">
+        <p class="appearance-title">Appearance</p>
+        <p class="appearance-caption">Accent palette</p>
+        <div class="appearance-palettes" role="group" aria-label="Accent palette">
+          <button type="button" data-color-theme="ember" aria-label="Ember palette" aria-pressed="true"><span class="palette-swatch swatch-ember"></span></button>
+          <button type="button" data-color-theme="ocean" aria-label="Ocean palette" aria-pressed="false"><span class="palette-swatch swatch-ocean"></span></button>
+          <button type="button" data-color-theme="forest" aria-label="Forest palette" aria-pressed="false"><span class="palette-swatch swatch-forest"></span></button>
+        </div>
+        <label class="glass-setting" for="glassMode"><span>Glass surfaces</span><input id="glassMode" type="checkbox"><span class="glass-switch" aria-hidden="true"></span></label>
+      </div>
+    </details>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme"></button>
+  </div>
+</header>
+<main class="admin-main">
+  <section class="admin-gate-layout">
+    <div class="admin-scene" id="adminScene">
+      <div class="admin-scene-kicker">PRIVATE WORKSPACE</div>
+      <h1>One quick<br><span class="grad-text">check.</span></h1>
+      <div class="mascot" id="mascot" aria-hidden="true">
+        <div class="mascot-tail"><span></span></div>
+        <div class="mascot-spines"><span></span><span></span><span></span><span></span></div>
+        <div class="mascot-pack"></div>
+        <div class="mascot-head">
+          <div class="mascot-eye mascot-eye-left"><span></span></div>
+          <div class="mascot-eye mascot-eye-right"><span></span></div>
+          <div class="mascot-snout"><span></span><span></span></div>
+          <div class="mascot-mouth"></div>
+        </div>
+        <div class="mascot-body">
+          <div class="mascot-belly"></div>
+          <div class="mascot-chest-console"><span></span><span></span><span></span></div>
+          <span class="mascot-suit-mark"></span>
+        </div>
+        <div class="mascot-flame"></div>
+      </div>
+      <div class="admin-scene-star admin-scene-star-one"></div>
+      <div class="admin-scene-star admin-scene-star-two"></div>
+      <div class="admin-scene-star admin-scene-star-three"></div>
+      <div class="admin-scene-floor"></div>
+    </div>
+    <form id="captchaForm" class="admin-panel admin-gate-panel">
+      <p class="section-label">QUICK CHECK</p>
+      <h2>Before you continue</h2>
+      <label id="captchaQuestion" for="captchaAnswer">Solve the calculation</label>
+      <input id="captchaAnswer" name="answer" type="number" inputmode="numeric" autocomplete="off" required>
+      <button class="btn btn-primary admin-submit" type="submit">Continue <span aria-hidden="true">&#8594;</span></button>
+      <p id="captchaStatus" class="admin-status" role="status" aria-live="polite">Answer the simple calculation to continue to admin sign-in.</p>
+    </form>
+  </section>
+</main>
+<footer class="admin-footer"><span>Afnan Khan</span><span>Private portfolio workspace</span></footer>
+<script src="theme.js?v=20261022"></script>
+<script src="admin-gate.js?v=20260930" defer></script>
+<script src="particles.js" defer></script>
+</body>
+</html>

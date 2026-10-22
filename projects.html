@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | Afnan Khan — AI Systems Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Afnan Khan – AI hiring platforms, Django CRM, ML forecasting and more. UP, India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+<canvas id="particles-canvas"></canvas>
+
+<header class="navbar" id="navbar">
+  <div class="logo">AK /</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="work-in-progress.html" aria-label="Work in Progress" title="Work in Progress">WIP</a>
+  </nav>
+  <div class="appearance-controls">
+    <details class="appearance-menu">
+      <summary class="appearance-trigger" aria-label="Appearance settings" title="Appearance settings"><span aria-hidden="true">◐</span></summary>
+      <div class="appearance-panel">
+        <p class="appearance-title">Appearance</p>
+        <p class="appearance-caption">Accent palette</p>
+        <div class="appearance-palettes" role="group" aria-label="Accent palette">
+          <button type="button" data-color-theme="ember" aria-label="Ember palette" aria-pressed="true"><span class="palette-swatch swatch-ember"></span></button>
+          <button type="button" data-color-theme="ocean" aria-label="Ocean palette" aria-pressed="false"><span class="palette-swatch swatch-ocean"></span></button>
+          <button type="button" data-color-theme="forest" aria-label="Forest palette" aria-pressed="false"><span class="palette-swatch swatch-forest"></span></button>
+        </div>
+        <label class="glass-setting" for="glassMode"><span>Glass surfaces</span><input id="glassMode" type="checkbox"><span class="glass-switch" aria-hidden="true"></span></label>
+      </div>
+    </details>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme"></button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="landing-scene" aria-hidden="true">
+    <canvas class="landing-globe-canvas" aria-hidden="true"></canvas>
+  </div>
+  <div class="page-hero-badge">✦ Featured Work</div>
+  <h1>Systems I've <span class="grad-text">Built.</span></h1>
+  <p>From AI hiring platforms to real-time ML pipelines — every project ships to production and solves real problems.</p>
+</section>
+
+<section class="section-pad projects-bg">
+  <div class="project-grid">
+    <div class="project-card reveal" data-project-id="hiveHiring"><div class="project-icon">🐝</div><h3>Hive Hiring Platform</h3><p>AI-powered recruiting automation achieving 80% reduction in time-to-hire through intelligent resume parsing, candidate scoring, and multi-role workflow orchestration.</p><div class="tag-row"><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">AI/ML</span></div></div>
+    <a class="project-card reveal" data-project-id="ctrlCrm" href="https://ctrlcrm.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" aria-label="Open CTRL CRM System in a new tab"><div class="project-icon">📊</div><h3>CTRL CRM System</h3><p>Enterprise CRM with automated workflow triggers, real-time analytics dashboards, role-based access, and a Django REST backend deployed across 3 production departments.</p><div class="tag-row"><span class="tag">Django</span><span class="tag">REST API</span><span class="tag">SQLite</span><span class="tag">JS</span></div><span class="project-card-link">Open CTRL CRM <span aria-hidden="true">↗</span></span></a>
+    <div class="project-card reveal" data-project-id="stockPrediction"><div class="project-icon">📈</div><h3>Stock Prediction ML</h3><p>ML forecasting pipeline combining LSTM neural networks with scikit-learn ensembles. Multi-year OHLCV training data with a FastAPI real-time inference endpoint.</p><div class="tag-row"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">LSTM</span><span class="tag">FastAPI</span></div></div>
+    <div class="project-card reveal" data-project-id="sapAutomation"><div class="project-icon">⚙️</div><h3>SAP Workflow Automation</h3><p>Enterprise SAP integration layer automating procurement, invoice processing, and approvals — reducing manual entry by 60%+ for 3 client organisations.</p><div class="tag-row"><span class="tag">SAP</span><span class="tag">Python</span><span class="tag">REST</span><span class="tag">Automation</span></div></div>
+    <div class="project-card reveal" data-project-id="documentProcessor"><div class="project-icon">🤖</div><h3>AI Document Processor</h3><p>Transformer-based NLP system for intelligent document extraction and classification. Processes contracts and invoices with 94%+ accuracy outputting structured JSON.</p><div class="tag-row"><span class="tag">Transformers</span><span class="tag">LLM</span><span class="tag">FastAPI</span><span class="tag">Python</span></div></div>
+    <div class="project-card reveal" data-project-id="bewellMedical"><div class="project-icon">🏥</div><h3>Bewell Medical Platform</h3><p>Patient management and scheduling platform. Includes appointment booking, staff management, insurance tracking, and real-time notifications at enterprise scale.</p><div class="tag-row"><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">React</span><span class="tag">Docker</span></div></div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<section class="contact-section reveal">
+  <p class="section-label">Ready to collaborate?</p>
+  <h2 class="section-title" style="margin-bottom:22px;">Let's build something <span class="grad-text">together.</span></h2>
+  <a href="mailto:afnankhan232@gmail.com" class="btn btn-primary">Get In Touch →</a>
+</section>
+
+<footer>
+  <span class="footer-logo">Afnan Khan</span>
+  <span>© 2026 · Engineered with Precision</span>
+  <span>UP, India 🇮🇳</span>
+</footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.152.2/build/three.module.js"
+  }
+}
+</script>
+<script src="theme.js?v=20261022"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="admin-config.js?v=20260930"></script>
+<script src="portfolio-live.js?v=2"></script>
+<script src="project-links.js?v=2" defer></script>
+<script src="ui.js"        defer></script>
+<script src="particles.js" defer></script>
+<script type="module" src="script.js"></script>
+</body>
+</html>

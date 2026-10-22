@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Private portfolio administration">
+  <title>Admin | Afnan Khan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode admin-page">
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+<header class="navbar admin-navbar" id="navbar">
+  <a class="logo" href="index.html">AK / ADMIN</a>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+  <div class="admin-nav-actions">
+    <details class="appearance-menu">
+      <summary class="appearance-trigger" aria-label="Appearance settings" title="Appearance settings"><span aria-hidden="true">◐</span></summary>
+      <div class="appearance-panel">
+        <p class="appearance-title">Appearance</p>
+        <p class="appearance-caption">Accent palette</p>
+        <div class="appearance-palettes" role="group" aria-label="Accent palette">
+          <button type="button" data-color-theme="ember" aria-label="Ember palette" aria-pressed="true"><span class="palette-swatch swatch-ember"></span></button>
+          <button type="button" data-color-theme="ocean" aria-label="Ocean palette" aria-pressed="false"><span class="palette-swatch swatch-ocean"></span></button>
+          <button type="button" data-color-theme="forest" aria-label="Forest palette" aria-pressed="false"><span class="palette-swatch swatch-forest"></span></button>
+        </div>
+        <label class="glass-setting" for="glassMode"><span>Glass surfaces</span><input id="glassMode" type="checkbox"><span class="glass-switch" aria-hidden="true"></span></label>
+      </div>
+    </details>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme"></button>
+    <button id="signOutButton" class="btn btn-outline admin-signout" type="button" hidden>Sign out</button>
+  </div>
+</header>
+<main class="admin-main">
+  <section id="loginView" class="admin-login-view">
+    <div class="admin-scene" id="adminScene">
+      <div class="admin-scene-kicker">PRIVATE WORKSPACE</div>
+      <h1>Good to see<br><span class="grad-text">you again.</span></h1>
+      <div class="mascot" id="mascot" aria-hidden="true">
+        <div class="mascot-tail"><span></span></div>
+        <div class="mascot-spines"><span></span><span></span><span></span><span></span></div>
+        <div class="mascot-pack"></div>
+        <div class="mascot-head">
+          <div class="mascot-eye mascot-eye-left"><span></span></div>
+          <div class="mascot-eye mascot-eye-right"><span></span></div>
+          <div class="mascot-snout"><span></span><span></span></div>
+          <div class="mascot-mouth"></div>
+        </div>
+        <div class="mascot-body">
+          <div class="mascot-belly"></div>
+          <div class="mascot-chest-console"><span></span><span></span><span></span></div>
+          <span class="mascot-suit-mark"></span>
+        </div>
+        <div class="mascot-flame"></div>
+      </div>
+      <div class="admin-scene-star admin-scene-star-one"></div>
+      <div class="admin-scene-star admin-scene-star-two"></div>
+      <div class="admin-scene-star admin-scene-star-three"></div>
+      <div class="admin-scene-floor"></div>
+    </div>
+    <form id="loginForm" class="admin-panel admin-login-form">
+      <p class="section-label">ACCOUNT ACCESS</p>
+      <h2>Sign in</h2>
+      <label for="adminEmail">Email address</label>
+      <input id="adminEmail" name="email" type="email" autocomplete="username" required>
+      <label for="adminPassword">Password</label>
+      <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+      <button class="btn btn-primary admin-submit" type="submit">Continue <span aria-hidden="true">&#8594;</span></button>
+      <p id="authStatus" class="admin-status" role="status" aria-live="polite">Checking secure sign-in configuration...</p>
+    </form>
+  </section>
+
+  <section id="dashboardView" class="admin-dashboard" hidden>
+    <div class="admin-dashboard-heading">
+      <div>
+        <p class="section-label">PORTFOLIO SETTINGS</p>
+        <h1>Content studio</h1>
+      </div>
+      <span class="admin-secure-indicator"><span></span> Authenticated</span>
+    </div>
+    <div class="admin-content-tabs" role="tablist" aria-label="Content sections">
+      <button class="admin-content-tab is-active" id="projectsTab" type="button" role="tab" aria-selected="true" aria-controls="projectsPanel" data-admin-tab="projects">Projects</button>
+      <button class="admin-content-tab" id="resumeTab" type="button" role="tab" aria-selected="false" aria-controls="resumePanel" data-admin-tab="resume">Resume</button>
+      <a class="admin-preview-link" href="projects.html" target="_blank" rel="noopener">Preview site <span aria-hidden="true">&#8599;</span></a>
+    </div>
+    <form id="projectsForm" class="admin-panel admin-project-form">
+      <div class="admin-panel-heading">
+        <div><p class="section-label">PROJECT CONTENT</p><h2>Edit cards and destinations</h2></div>
+        <span class="admin-item-count">6 projects</span>
+      </div>
+      <p class="admin-form-intro">Titles, descriptions, technology tags, and links update the public Projects page.</p>
+      <div class="admin-project-list">
+        <details class="admin-project-editor" data-project-editor="hiveHiring" open>
+          <summary><span class="admin-project-number">01</span><span>Hive Hiring Platform</span></summary>
+          <div class="admin-fields-grid">
+            <div class="admin-field"><label>Title</label><input data-project-field="title" value="Hive Hiring Platform" required></div>
+            <div class="admin-field"><label>Project URL</label><input data-project-field="url" type="url" inputmode="url" placeholder="https://"></div>
+            <div class="admin-field admin-field-wide"><label>Description</label><textarea data-project-field="description" rows="3" required>AI-powered recruiting automation achieving 80% reduction in time-to-hire through intelligent resume parsing, candidate scoring, and multi-role workflow orchestration.</textarea></div>
+            <div class="admin-field admin-field-wide"><label>Technology tags, separated by commas</label><input data-project-field="technologies" value="React, FastAPI, MongoDB, AI/ML"></div>
+          </div>
+        </details>
+        <details class="admin-project-editor" data-project-editor="ctrlCrm">
+          <summary><span class="admin-project-number">02</span><span>CTRL CRM System</span></summary>
+          <div class="admin-fields-grid">
+            <div class="admin-field"><label>Title</label><input data-project-field="title" value="CTRL CRM System" required></div>
+            <div class="admin-field"><label>Project URL</label><input data-project-field="url" type="url" inputmode="url" value="https://ctrlcrm.pythonanywhere.com/" placeholder="https://"></div>
+            <div class="admin-field admin-field-wide"><label>Description</label><textarea data-project-field="description" rows="3" required>Enterprise CRM with automated workflow triggers, real-time analytics dashboards, role-based access, and a Django REST backend deployed across 3 production departments.</textarea></div>
+            <div class="admin-field admin-field-wide"><label>Technology tags, separated by commas</label><input data-project-field="technologies" value="Django, REST API, SQLite, JS"></div>
+          </div>
+        </details>
+        <details class="admin-project-editor" data-project-editor="stockPrediction">
+          <summary><span class="admin-project-number">03</span><span>Stock Prediction ML</span></summary>
+          <div class="admin-fields-grid">
+            <div class="admin-field"><label>Title</label><input data-project-field="title" value="Stock Prediction ML" required></div>
+            <div class="admin-field"><label>Project URL</label><input data-project-field="url" type="url" inputmode="url" placeholder="https://"></div>
+            <div class="admin-field admin-field-wide"><label>Description</label><textarea data-project-field="description" rows="3" required>ML forecasting pipeline combining LSTM neural networks with scikit-learn ensembles. Multi-year OHLCV training data with a FastAPI real-time inference endpoint.</textarea></div>
+            <div class="admin-field admin-field-wide"><label>Technology tags, separated by commas</label><input data-project-field="technologies" value="Python, scikit-learn, LSTM, FastAPI"></div>
+          </div>
+        </details>
+        <details class="admin-project-editor" data-project-editor="sapAutomation">
+          <summary><span class="admin-project-number">04</span><span>SAP Workflow Automation</span></summary>
+          <div class="admin-fields-grid">
+            <div class="admin-field"><label>Title</label><input data-project-field="title" value="SAP Workflow Automation" required></div>
+            <div class="admin-field"><label>Project URL</label><input data-project-field="url" type="url" inputmode="url" placeholder="https://"></div>
+            <div class="admin-field admin-field-wide"><label>Description</label><textarea data-project-field="description" rows="3" required>Enterprise SAP integration layer automating procurement, invoice processing, and approvals — reducing manual entry by 60%+ for 3 client organisations.</textarea></div>
+            <div class="admin-field admin-field-wide"><label>Technology tags, separated by commas</label><input data-project-field="technologies" value="SAP, Python, REST, Automation"></div>
+          </div>
+        </details>
+        <details class="admin-project-editor" data-project-editor="documentProcessor">
+          <summary><span class="admin-project-number">05</span><span>AI Document Processor</span></summary>
+          <div class="admin-fields-grid">
+            <div class="admin-field"><label>Title</label><input data-project-field="title" value="AI Document Processor" required></div>
+            <div class="admin-field"><label>Project URL</label><input data-project-field="url" type="url" inputmode="url" placeholder="https://"></div>
+            <div class="admin-field admin-field-wide"><label>Description</label><textarea data-project-field="description" rows="3" required>Transformer-based NLP system for intelligent document extraction and classification. Processes contracts and invoices with 94%+ accuracy outputting structured JSON.</textarea></div>
+            <div class="admin-field admin-field-wide"><label>Technology tags, separated by commas</label><input data-project-field="technologies" value="Transformers, LLM, FastAPI, Python"></div>
+          </div>
+        </details>
+        <details class="admin-project-editor" data-project-editor="bewellMedical">
+          <summary><span class="admin-project-number">06</span><span>Bewell Medical Platform</span></summary>
+          <div class="admin-fields-grid">
+            <div class="admin-field"><label>Title</label><input data-project-field="title" value="Bewell Medical Platform" required></div>
+            <div class="admin-field"><label>Project URL</label><input data-project-field="url" type="url" inputmode="url" placeholder="https://"></div>
+            <div class="admin-field admin-field-wide"><label>Description</label><textarea data-project-field="description" rows="3" required>Patient management and scheduling platform. Includes appointment booking, staff management, insurance tracking, and real-time notifications at enterprise scale.</textarea></div>
+            <div class="admin-field admin-field-wide"><label>Technology tags, separated by commas</label><input data-project-field="technologies" value="Django, PostgreSQL, React, Docker"></div>
+          </div>
+        </details>
+      </div>
+      <div class="admin-form-footer">
+        <p id="settingsStatus" class="admin-status" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary" type="submit">Save project content</button>
+      </div>
+    </form>
+    <form id="resumeForm" class="admin-panel admin-resume-form" hidden>
+      <div class="admin-panel-heading">
+        <div><p class="section-label">RESUME CONTENT</p><h2>Profile, skills, and experience</h2></div>
+        <a class="admin-preview-link" href="resume.html" target="_blank" rel="noopener">Preview resume <span aria-hidden="true">&#8599;</span></a>
+      </div>
+      <p class="admin-form-intro">Edit the copy shown on the public resume. Leave the PDF file itself unchanged.</p>
+      <div class="admin-resume-fields">
+        <fieldset class="admin-fieldset">
+          <legend>Profile</legend>
+          <div class="admin-fields-grid">
+            <div class="admin-field"><label for="resumeName">Name</label><input id="resumeName" data-resume-key="name" value="Afnan Khan" required></div>
+            <div class="admin-field"><label for="resumeRole">Role</label><input id="resumeRole" data-resume-key="role" value="Cybersecurity Engineer · IAM · Okta" required></div>
+            <div class="admin-field"><label for="resumeHeroLead">Hero heading, first part</label><input id="resumeHeroLead" data-resume-key="heroLead" value="My" required></div>
+            <div class="admin-field"><label for="resumeHeroAccent">Hero heading, accent</label><input id="resumeHeroAccent" data-resume-key="heroAccent" value="Resume." required></div>
+            <div class="admin-field admin-field-wide"><label for="resumeSummary">Intro summary</label><textarea id="resumeSummary" data-resume-key="summary" rows="3" required>Cybersecurity Engineer at Cognizant · Identity and Access Management (IAM) professional focused on the Okta identity platform.</textarea></div>
+            <div class="admin-field"><label for="resumeLocation">Location</label><input id="resumeLocation" data-resume-key="location" value="Uttar Pradesh, India"></div>
+            <div class="admin-field"><label for="resumeEducation">Education</label><input id="resumeEducation" data-resume-key="education" value="Computer Systems Engineering"></div>
+            <div class="admin-field"><label for="resumeEmployer">Current employer</label><input id="resumeEmployer" data-resume-key="employer" value="Cognizant"></div>
+            <div class="admin-field"><label for="resumeEmail">Contact email</label><input id="resumeEmail" data-resume-key="email" type="email" value="afnankhan232@gmail.com"></div>
+            <div class="admin-field"><label for="resumeCoreSkills">Core skills line</label><input id="resumeCoreSkills" data-resume-key="coreSkills" value="Cybersecurity · IAM · Okta"></div>
+            <div class="admin-field"><label for="resumeOtherSkills">Specialties line</label><input id="resumeOtherSkills" data-resume-key="otherSkills" value="Identity and Access Management · Okta identity platform"></div>
+          </div>
+        </fieldset>
+        <fieldset class="admin-fieldset">
+          <legend>Experience and education</legend>
+          <div class="admin-fields-grid">
+            <div class="admin-field"><label for="experienceOneDate">Current role dates</label><input id="experienceOneDate" data-resume-key="experienceOneDate" value="2026 – Present"></div>
+            <div class="admin-field"><label for="experienceOneTitle">Current role title</label><input id="experienceOneTitle" data-resume-key="experienceOneTitle" value="Cybersecurity Engineer — Cognizant"></div>
+            <div class="admin-field admin-field-wide"><label for="experienceOneDescription">Current role description</label><textarea id="experienceOneDescription" data-resume-key="experienceOneDescription" rows="3" required>Cybersecurity engineering with a focus on Identity and Access Management (IAM) and the Okta identity platform.</textarea></div>
+            <div class="admin-field"><label for="experienceTwoDate">Previous role dates</label><input id="experienceTwoDate" data-resume-key="experienceTwoDate" value="2025"></div>
+            <div class="admin-field"><label for="experienceTwoTitle">Training / company</label><input id="experienceTwoTitle" data-resume-key="experienceTwoTitle" value="SAP Trainee — Vandya and Moot Pvt. Limited"></div>
+            <div class="admin-field admin-field-wide"><label for="experienceTwoDescription">Training details</label><textarea id="experienceTwoDescription" data-resume-key="experienceTwoDescription" rows="3" required>Trained on SAP IBP and SAP ABAP.</textarea></div>
+            <div class="admin-field"><label for="experienceThreeDate">CTRL CRM dates</label><input id="experienceThreeDate" data-resume-key="experienceThreeDate" value="2023 – 2024"></div>
+            <div class="admin-field"><label for="experienceThreeTitle">CTRL CRM role / project</label><input id="experienceThreeTitle" data-resume-key="experienceThreeTitle" value="CTRL CRM — Backend Engineering"></div>
+            <div class="admin-field admin-field-wide"><label for="experienceThreeDescription">CTRL CRM details</label><textarea id="experienceThreeDescription" data-resume-key="experienceThreeDescription" rows="3" required>Built a Django CRM with automated workflow triggers, analytics dashboards, and REST APIs.</textarea></div>
+            <div class="admin-field"><label for="experienceFourDate">Hive Hiring dates</label><input id="experienceFourDate" data-resume-key="experienceFourDate" value="2025"></div>
+            <div class="admin-field"><label for="experienceFourTitle">Hive Hiring project</label><input id="experienceFourTitle" data-resume-key="experienceFourTitle" value="Hive Hiring Platform — College Project"></div>
+            <div class="admin-field admin-field-wide"><label for="experienceFourDescription">Hive Hiring details</label><textarea id="experienceFourDescription" data-resume-key="experienceFourDescription" rows="3" required>Built an AI-powered hiring platform in college with resume parsing, candidate scoring, and recruiting workflow automation.</textarea></div>
+            <div class="admin-field"><label for="experienceFiveDate">Graduation dates</label><input id="experienceFiveDate" data-resume-key="experienceFiveDate" value="2020 – 2025"></div>
+            <div class="admin-field"><label for="experienceFiveTitle">Degree</label><input id="experienceFiveTitle" data-resume-key="experienceFiveTitle" value="Computer Systems Engineering"></div>
+            <div class="admin-field admin-field-wide"><label for="experienceFiveDescription">Education details</label><textarea id="experienceFiveDescription" data-resume-key="experienceFiveDescription" rows="3" required>Graduated in 2025 after studying computer systems, algorithms, embedded systems, and AI/ML.</textarea></div>
+          </div>
+        </fieldset>
+        <fieldset class="admin-fieldset">
+          <legend>Proficiency bars</legend>
+          <div class="admin-fields-grid admin-skill-fields">
+            <div class="admin-field"><label for="skillOneName">Skill 1</label><input id="skillOneName" data-resume-key="skillOneName" value="Python / Django"></div><div class="admin-field"><label for="skillOnePercent">Skill 1 percent</label><input id="skillOnePercent" data-resume-key="skillOnePercent" type="number" min="0" max="100" value="95"></div>
+            <div class="admin-field"><label for="skillTwoName">Skill 2</label><input id="skillTwoName" data-resume-key="skillTwoName" value="FastAPI / REST"></div><div class="admin-field"><label for="skillTwoPercent">Skill 2 percent</label><input id="skillTwoPercent" data-resume-key="skillTwoPercent" type="number" min="0" max="100" value="90"></div>
+            <div class="admin-field"><label for="skillThreeName">Skill 3</label><input id="skillThreeName" data-resume-key="skillThreeName" value="React / JS"></div><div class="admin-field"><label for="skillThreePercent">Skill 3 percent</label><input id="skillThreePercent" data-resume-key="skillThreePercent" type="number" min="0" max="100" value="82"></div>
+            <div class="admin-field"><label for="skillFourName">Skill 4</label><input id="skillFourName" data-resume-key="skillFourName" value="ML / scikit-learn"></div><div class="admin-field"><label for="skillFourPercent">Skill 4 percent</label><input id="skillFourPercent" data-resume-key="skillFourPercent" type="number" min="0" max="100" value="78"></div>
+            <div class="admin-field"><label for="skillFiveName">Skill 5</label><input id="skillFiveName" data-resume-key="skillFiveName" value="MongoDB / SQL"></div><div class="admin-field"><label for="skillFivePercent">Skill 5 percent</label><input id="skillFivePercent" data-resume-key="skillFivePercent" type="number" min="0" max="100" value="85"></div>
+            <div class="admin-field"><label for="skillSixName">Skill 6</label><input id="skillSixName" data-resume-key="skillSixName" value="SAP Integration"></div><div class="admin-field"><label for="skillSixPercent">Skill 6 percent</label><input id="skillSixPercent" data-resume-key="skillSixPercent" type="number" min="0" max="100" value="70"></div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="admin-form-footer">
+        <p id="resumeStatus" class="admin-status" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary" type="submit">Save resume content</button>
+      </div>
+    </form>
+  </section>
+</main>
+<footer class="admin-footer"><span>Afnan Khan</span><span>Private portfolio workspace</span></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="admin-config.js?v=20260930"></script>
+<script src="theme.js?v=20261022"></script>
+<script src="admin.js?v=20260930" defer></script>
+<script src="particles.js" defer></script>
+</body>
+</html>
